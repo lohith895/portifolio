@@ -6,6 +6,7 @@ import ScrollToTop from "../../common/ScrollToTop/ScrollToTop";
 import ScrollToTopButton from "../../common/ScrollToTop/ScrollToTopButton";
 import ScrollProgress from "../../common/ScrollProgress/ScrollProgress";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react";
 
 export const Layout = ({ children }) => {
   return (
@@ -39,6 +40,7 @@ export const Layout = ({ children }) => {
         {/* Route Scroll Reset & Notifications */}
         <ScrollToTop />
         <Toaster position="bottom-right" toastOptions={{ duration: 4000 }} />
+        <Analytics />
       </div>
     </ThemeProvider>
   );
