@@ -23,7 +23,7 @@ export const SocialLinks = ({ className = '' }) => {
             className="p-3 rounded-xl glass-card text-slate-300 hover:text-blue-400 hover:border-blue-500/50 transition-all duration-300 shadow-md flex items-center justify-center"
           >
             <Icon
-              className={`text-xl ${isGitHub ? 'text-slate-900 dark:text-slate-100' : ''}`}
+              className={`text-xl ${isGitHub ? 'github-icon' : ''}`}
               style={isGitHub ? {} : { color: link.color }}
             />
           </motion.a>

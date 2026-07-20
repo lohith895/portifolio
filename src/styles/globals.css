@@ -112,6 +112,13 @@ html.light .navbar-root {
   border-color: #e2e8f0 !important;
 }
 
+/* GitHub Icon Theme Color Rules */
+.github-icon,
+a[title="GitHub"] svg {
+  color: #ffffff !important;
+}
+
+html.light .github-icon,
 html.light a[title="GitHub"] svg {
   color: #0f172a !important;
 }

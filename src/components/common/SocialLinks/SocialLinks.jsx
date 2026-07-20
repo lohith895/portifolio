@@ -28,7 +28,7 @@ export const SocialLinks = ({ className = '', iconSize = 'text-xl' }) => {
             className="social-link-item p-3 rounded-xl glass-card text-slate-300 hover:text-blue-500 shadow-md flex items-center justify-center min-h-[44px] min-w-[44px]"
           >
             <IconComponent
-              className={`${iconSize} ${isGitHub ? 'text-slate-900 dark:text-slate-100' : ''}`}
+              className={`${iconSize} ${isGitHub ? 'github-icon' : ''}`}
               style={isGitHub ? {} : { color: link.color }}
             />
           </a>
