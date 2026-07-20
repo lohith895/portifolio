@@ -2,6 +2,7 @@ import React, { useState, memo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Logo from './Logo';
+import DesktopMenu from './DesktopMenu';
 import MobileMenu from './MobileMenu';
 import ThemeToggle from './ThemeToggle';
 import { useScroll } from '../../../hooks/useScroll';
@@ -37,20 +38,28 @@ export const Navbar = memo(() => {
           isScrolled ? 'navbar-scrolled' : 'navbar-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+          {/* Logo */}
           <Logo />
 
+          {/* Desktop Menu Navbar matching Image 1 */}
+          <DesktopMenu
+            activeSection={activeSection}
+            isHomePage={isHomePage}
+            onNavigate={handleNavigate}
+          />
+
+          {/* Right Controls */}
           <div className="flex items-center gap-3">
             {/* Theme Toggle Button */}
             <ThemeToggle />
 
-            {/* 3 Dashlines Menu Trigger Button */}
+            {/* 3 Dashlines Menu Trigger Button (Hidden on Desktop, Visible on Mobile) */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="flex items-center gap-2.5 px-4 py-2 rounded-full glass-card border border-slate-800 text-slate-200 hover:text-white hover:border-blue-500/50 hover:bg-slate-800/90 transition-all duration-200 cursor-pointer shadow-lg group"
+              className="lg:hidden flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border border-slate-800 text-slate-200 hover:text-white hover:border-blue-500/50 hover:bg-slate-800/90 transition-all duration-200 cursor-pointer shadow-lg group"
               aria-label="Open Navigation Menu"
             >
-              {/* 3 Dashlines Icon */}
               <div className="flex flex-col justify-center items-center w-5 h-4 gap-1">
                 <span className="w-5 h-0.5 bg-blue-400 rounded-full transition-all duration-300 group-hover:w-6 group-hover:bg-cyan-400" />
                 <span className="w-4 h-0.5 bg-slate-200 rounded-full transition-all duration-300 group-hover:w-6 group-hover:bg-white" />

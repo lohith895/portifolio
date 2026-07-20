@@ -17,8 +17,8 @@ const navLinks = [
   },
   {
     id: 4,
-    name: "Skills",
-    section: "skills",
+    name: "Education",
+    section: "education",
   },
   {
     id: 5,

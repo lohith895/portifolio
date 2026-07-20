@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaTimes, FaDownload, FaPaperPlane, FaHome, FaUser, FaBriefcase, FaCode, FaFolderOpen, FaEnvelope } from 'react-icons/fa';
+import { FaTimes, FaDownload, FaPaperPlane, FaHome, FaUser, FaBriefcase, FaGraduationCap, FaFolderOpen, FaEnvelope } from 'react-icons/fa';
 import navLinks from './navLinks';
 import ThemeToggle from './ThemeToggle';
 import { PERSONAL_INFO } from '../../../utils/constants';
@@ -10,7 +10,7 @@ const iconMap = {
   hero: FaHome,
   about: FaUser,
   experience: FaBriefcase,
-  skills: FaCode,
+  education: FaGraduationCap,
   projects: FaFolderOpen,
   contact: FaEnvelope,
 };
@@ -35,13 +35,13 @@ export const MobileMenu = ({ isOpen, onClose, activeSection, onNavigate }) => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 bottom-0 z-50 w-80 max-w-[90vw] bg-slate-900/95 border-l border-slate-800 p-6 flex flex-col justify-between shadow-2xl backdrop-blur-xl"
+            className="fixed top-0 right-0 bottom-0 z-50 w-80 max-w-[90vw] bg-slate-900/95 border-l border-slate-800 p-6 flex flex-col justify-between shadow-2xl backdrop-blur-xl overflow-y-auto"
           >
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-slate-800">
                 <span className="font-mono font-bold text-slate-100 text-sm flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
-                  Menu
+                  Navigation Menu
                 </span>
                 <button
                   onClick={onClose}
@@ -52,8 +52,8 @@ export const MobileMenu = ({ isOpen, onClose, activeSection, onNavigate }) => {
                 </button>
               </div>
 
-              {/* Nav items matching Image 2 with active pill style */}
-              <nav className="mt-8 flex flex-col gap-2.5">
+              {/* Nav items matching Image 1 */}
+              <nav className="mt-6 flex flex-col gap-2">
                 {navLinks.map((link) => {
                   const isActive = activeSection === link.section;
                   const Icon = iconMap[link.section] || FaHome;
@@ -86,7 +86,7 @@ export const MobileMenu = ({ isOpen, onClose, activeSection, onNavigate }) => {
                 <ThemeToggle />
               </div>
 
-              <div className="grid grid-cols-1 gap-2.5 pt-2">
+              <div className="grid grid-cols-1 gap-2.5 pt-1">
                 <Button
                   variant="outline"
                   size="md"

@@ -1,6 +1,6 @@
-import { FaGithub, FaLinkedin, FaCode, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaCode, FaWhatsapp } from 'react-icons/fa';
+import { SiGmail, SiSpringboot, SiFlutter, SiMongodb } from 'react-icons/si';
 import { FaReact, FaJava, FaAws } from 'react-icons/fa';
-import { SiSpringboot, SiFlutter, SiMongodb } from 'react-icons/si';
 
 export const HERO_DATA = {
   greeting: "Hi, I'm",
@@ -32,15 +32,21 @@ export const HERO_SOCIALS = [
     color: "#0A66C2",
   },
   {
+    name: "WhatsApp",
+    url: "https://wa.me/919121946531",
+    icon: FaWhatsapp,
+    color: "#25D366",
+  },
+  {
     name: "LeetCode",
     url: "https://leetcode.com/u/A_LOHITH_VENKATA_GUPTHA/",
     icon: FaCode,
     color: "#FFA116",
   },
   {
-    name: "Email",
-    url: "mailto:lohi.valli@gmail.com",
-    icon: FaEnvelope,
+    name: "Gmail",
+    url: "https://mail.google.com/mail/?view=cm&fs=1&to=lohi.valli@gmail.com",
+    icon: SiGmail,
     color: "#EA4335",
   },
 ];

@@ -5,6 +5,7 @@ import { ThemeProvider } from "../../../context/ThemeContext";
 import ScrollToTop from "../../common/ScrollToTop/ScrollToTop";
 import ScrollToTopButton from "../../common/ScrollToTop/ScrollToTopButton";
 import ScrollProgress from "../../common/ScrollProgress/ScrollProgress";
+import { WhatsAppBot } from "../../common/WhatsAppBot";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -33,6 +34,9 @@ export const Layout = ({ children }) => {
 
         {/* Footer Landmark */}
         <Footer />
+
+        {/* Floating WhatsApp Quick Bot Widget */}
+        <WhatsAppBot />
 
         {/* Floating Back To Top Button */}
         <ScrollToTopButton />
