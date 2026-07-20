@@ -1,0 +1,8 @@
+/* SocialLinks component specific styles */
+.social-link-item {
+  transition: all 0.3s ease;
+}
+
+.social-link-item:hover {
+  transform: translateY(-2px) scale(1.1);
+}

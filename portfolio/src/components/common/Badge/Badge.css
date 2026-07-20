@@ -1,0 +1,9 @@
+/* Badge component specific styles */
+.badge-common {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}

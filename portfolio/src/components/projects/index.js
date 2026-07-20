@@ -1,0 +1,12 @@
+export { ProjectsSection, default } from './ProjectsSection';
+export { FeaturedProject } from './FeaturedProject';
+export { ProjectCard } from './ProjectCard';
+export { ProjectModal } from './ProjectModal';
+export { ProjectGallery } from './ProjectGallery';
+export { TechStack } from './TechStack';
+export { FeatureList } from './FeatureList';
+export { ArchitectureCard } from './ArchitectureCard';
+export { GitHubButton } from './GitHubButton';
+export { LiveDemoButton } from './LiveDemoButton';
+export { ProjectFilter } from './ProjectFilter';
+export { default as projects } from '../../data/projects';

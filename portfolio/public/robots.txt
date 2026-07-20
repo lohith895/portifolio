@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://appalalohith.dev/sitemap.xml

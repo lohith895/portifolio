@@ -1,0 +1,7 @@
+/* Card component specific styles */
+.card-common {
+  position: relative;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

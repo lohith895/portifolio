@@ -1,0 +1,11 @@
+/* SectionTitle component specific styles */
+.section-title-wrapper {
+  margin-bottom: 3rem;
+}
+
+.section-title-underline {
+  height: 0.25rem;
+  width: 5rem;
+  border-radius: 9999px;
+  margin-top: 1rem;
+}
