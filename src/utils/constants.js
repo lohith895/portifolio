@@ -4,7 +4,7 @@ export const PERSONAL_INFO = {
   title: "Software Engineer & Full Stack Developer",
   tagline: "Designing scalable full-stack web and mobile applications with Java, Spring Boot, React.js, Node.js, and Flutter.",
   bio: "Software Engineering graduate with hands-on experience designing and developing scalable full-stack web and mobile applications using Java, Spring Boot, React.js, Node.js, and Flutter. Passionate about designing reliable software, solving complex engineering problems, and building high-quality applications using OOP, RESTful APIs, and modern software engineering practices.",
-  location: "Vijayawada / Hyderabad, India",
+  location: "Vijayawada, Andhra Pradesh, India",
   email: "lohi.valli@gmail.com",
   phone: "+91 9121946531",
   availableForHire: true,
