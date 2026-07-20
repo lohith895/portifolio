@@ -1,12 +1,11 @@
 import AppRoutes from "./routes";
-import { Analytics } from "@vercel/analytics/react";
+import Layout from "./components/layout/Layout/Layout";
 
 function App() {
   return (
-    <>
+    <Layout>
       <AppRoutes />
-      <Analytics />
-    </>
+    </Layout>
   );
 }
 

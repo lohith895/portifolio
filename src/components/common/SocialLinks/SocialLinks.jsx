@@ -15,6 +15,8 @@ export const SocialLinks = ({ className = '', iconSize = 'text-xl' }) => {
     <div className={`flex items-center gap-4 ${className}`}>
       {SOCIAL_LINKS.map((link) => {
         const IconComponent = typeof link.icon === 'function' ? link.icon : (iconMap[link.icon] || FaGithub);
+        const isGitHub = link.name === 'GitHub';
+
         return (
           <a
             key={link.name}
@@ -23,9 +25,12 @@ export const SocialLinks = ({ className = '', iconSize = 'text-xl' }) => {
             rel="noopener noreferrer"
             title={link.name}
             aria-label={link.name}
-            className="social-link-item p-3 rounded-xl glass-card text-slate-300 hover:text-blue-400 hover:border-blue-500/50 shadow-md flex items-center justify-center min-h-[44px] min-w-[44px]"
+            className="social-link-item p-3 rounded-xl glass-card text-slate-300 hover:text-blue-500 shadow-md flex items-center justify-center min-h-[44px] min-w-[44px]"
           >
-            <IconComponent className={iconSize} style={{ color: link.color }} />
+            <IconComponent
+              className={`${iconSize} ${isGitHub ? 'text-slate-900 dark:text-slate-100' : ''}`}
+              style={isGitHub ? {} : { color: link.color }}
+            />
           </a>
         );
       })}

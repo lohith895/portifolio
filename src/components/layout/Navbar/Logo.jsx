@@ -1,28 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { PERSONAL_INFO } from '../../../utils/constants';
 
 export const Logo = () => {
   return (
-    <Link to="/" className="flex items-center gap-2.5 group">
+    <Link to="/" className="flex items-center gap-3 group">
       <motion.div
-        whileHover={{ scale: 1.08, rotate: 5 }}
+        whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 via-cyan-500 to-purple-600 p-[1px] shadow-lg shadow-blue-500/20"
+        className="w-10 h-10 shrink-0 rounded-xl bg-gradient-to-br from-cyan-500 via-blue-600 to-purple-600 p-[1.5px] shadow-lg shadow-cyan-500/20"
       >
-        <div className="w-full h-full bg-slate-900 rounded-[11px] flex items-center justify-center font-mono font-black text-cyan-400 text-sm tracking-tighter">
+        <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-mono font-bold text-cyan-400 text-sm">
           &lt;AL/&gt;
         </div>
       </motion.div>
 
-      <div className="flex flex-col">
-        <span className="font-bold text-base text-slate-100 tracking-tight group-hover:text-blue-400 transition-colors">
-          Appala<span className="text-blue-500">.</span>Lohith
-        </span>
-        <span className="text-[10px] font-mono text-slate-400 tracking-wider uppercase">
-          Software Engineer
-        </span>
-      </div>
+      <span className="font-extrabold text-sm sm:text-base md:text-lg text-slate-100 tracking-tight group-hover:text-cyan-400 transition-colors">
+        {PERSONAL_INFO.name}
+      </span>
     </Link>
   );
 };

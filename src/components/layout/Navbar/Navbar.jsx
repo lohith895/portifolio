@@ -1,26 +1,23 @@
 import React, { useState, memo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaBars, FaDownload, FaPaperPlane } from 'react-icons/fa';
 import Logo from './Logo';
-import DesktopMenu from './DesktopMenu';
 import MobileMenu from './MobileMenu';
 import ThemeToggle from './ThemeToggle';
 import { useScroll } from '../../../hooks/useScroll';
-import { scrollToElement, downloadResume } from '../../../utils/helpers';
-import { Button } from '../../common/Button';
+import { scrollToElement } from '../../../utils/helpers';
 import './Navbar.css';
 
 export const Navbar = memo(() => {
   const { isScrolled, scrollDirection, activeSection } = useScroll();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   const isHomePage = location.pathname === '/';
 
   const handleNavigate = (sectionId) => {
-    setMobileOpen(false);
+    setMenuOpen(false);
     if (!isHomePage) {
       navigate('/', { state: { scrollTo: sectionId } });
     } else {
@@ -28,7 +25,7 @@ export const Navbar = memo(() => {
     }
   };
 
-  const isHidden = scrollDirection === 'down' && isScrolled && !mobileOpen;
+  const isHidden = scrollDirection === 'down' && isScrolled && !menuOpen;
 
   return (
     <>
@@ -43,47 +40,33 @@ export const Navbar = memo(() => {
         <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 flex items-center justify-between">
           <Logo />
 
-          <DesktopMenu
-            activeSection={activeSection}
-            isHomePage={isHomePage}
-            onNavigate={handleNavigate}
-          />
-
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="flex items-center gap-3">
+            {/* Theme Toggle Button */}
             <ThemeToggle />
-            <Button
-              variant="outline"
-              size="sm"
-              icon={FaDownload}
-              onClick={downloadResume}
-            >
-              Resume
-            </Button>
-            <Button
-              variant="primary"
-              size="sm"
-              icon={FaPaperPlane}
-              onClick={() => handleNavigate('contact')}
-            >
-              Hire Me
-            </Button>
-          </div>
 
-          <div className="flex items-center gap-3 lg:hidden">
+            {/* 3 Dashlines Menu Trigger Button */}
             <button
-              onClick={() => setMobileOpen(true)}
-              className="p-2.5 rounded-xl glass-card text-slate-300 hover:text-white"
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex items-center gap-2.5 px-4 py-2 rounded-full glass-card border border-slate-800 text-slate-200 hover:text-white hover:border-blue-500/50 hover:bg-slate-800/90 transition-all duration-200 cursor-pointer shadow-lg group"
               aria-label="Open Navigation Menu"
             >
-              <FaBars className="text-lg" />
+              {/* 3 Dashlines Icon */}
+              <div className="flex flex-col justify-center items-center w-5 h-4 gap-1">
+                <span className="w-5 h-0.5 bg-blue-400 rounded-full transition-all duration-300 group-hover:w-6 group-hover:bg-cyan-400" />
+                <span className="w-4 h-0.5 bg-slate-200 rounded-full transition-all duration-300 group-hover:w-6 group-hover:bg-white" />
+                <span className="w-5 h-0.5 bg-purple-400 rounded-full transition-all duration-300 group-hover:w-6 group-hover:bg-purple-300" />
+              </div>
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-200 group-hover:text-cyan-400">
+                Menu
+              </span>
             </button>
           </div>
         </div>
       </motion.header>
 
       <MobileMenu
-        isOpen={mobileOpen}
-        onClose={() => setMobileOpen(false)}
+        isOpen={menuOpen}
+        onClose={() => setMenuOpen(false)}
         activeSection={activeSection}
         onNavigate={handleNavigate}
       />

@@ -23,7 +23,7 @@ export const HERO_SOCIALS = [
     name: "GitHub",
     url: "https://github.com/lohith895",
     icon: FaGithub,
-    color: "#333333",
+    color: "#ffffff",
   },
   {
     name: "LinkedIn",

@@ -7,6 +7,7 @@ export const SocialLinks = ({ className = '' }) => {
     <div className={`flex items-center gap-3 ${className}`}>
       {HERO_SOCIALS.map((link, idx) => {
         const Icon = link.icon;
+        const isGitHub = link.name === 'GitHub';
         return (
           <motion.a
             key={link.name}
@@ -21,7 +22,10 @@ export const SocialLinks = ({ className = '' }) => {
             title={link.name}
             className="p-3 rounded-xl glass-card text-slate-300 hover:text-blue-400 hover:border-blue-500/50 transition-all duration-300 shadow-md flex items-center justify-center"
           >
-            <Icon className="text-xl" />
+            <Icon
+              className={`text-xl ${isGitHub ? 'text-slate-900 dark:text-slate-100' : ''}`}
+              style={isGitHub ? {} : { color: link.color }}
+            />
           </motion.a>
         );
       })}

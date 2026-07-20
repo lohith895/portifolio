@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { FaArrowLeft, FaGithub, FaExternalLinkAlt, FaCheckCircle, FaLightbulb } from 'react-icons/fa';
-import Layout from '../../components/layout/Layout/Layout';
 import { PROJECTS } from '../../data/projects';
 import { Badge } from '../../components/common/Badge';
 import { Button } from '../../components/common/Button';
@@ -14,22 +13,20 @@ const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <Layout>
-        <div className="pt-32 pb-20 text-center max-w-xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-100 mb-4">Project Not Found</h2>
-          <p className="text-slate-400 mb-6">The requested project detail page does not exist.</p>
-          <Link to="/projects">
-            <Button variant="primary" icon={FaArrowLeft}>
-              Back to Projects Library
-            </Button>
-          </Link>
-        </div>
-      </Layout>
+      <div className="pt-32 pb-20 text-center max-w-xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-slate-100 mb-4">Project Not Found</h2>
+        <p className="text-slate-400 mb-6">The requested project detail page does not exist.</p>
+        <Link to="/projects">
+          <Button variant="primary" icon={FaArrowLeft}>
+            Back to Projects Library
+          </Button>
+        </Link>
+      </div>
     );
   }
 
   return (
-    <Layout>
+    <>
       <Helmet>
         <title>{project.title} | Case Study</title>
         <meta name="description" content={project.shortDescription} />
@@ -147,7 +144,7 @@ const ProjectDetails = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
