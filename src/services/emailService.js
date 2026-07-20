@@ -18,9 +18,10 @@ export const sendContactEmail = async (formData) => {
   const templateParams = {
     from_name: formData.name,
     from_email: formData.email,
+    reply_to: formData.email,
     subject: formData.subject || 'Portfolio Inquiry',
     message: formData.message,
-    to_name: 'Appala Lohith Venkata Guptha',
+    to_name: 'A Lohith Venkata Guptha',
   };
 
   return emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
