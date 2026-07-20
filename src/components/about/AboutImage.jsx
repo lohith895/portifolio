@@ -17,7 +17,7 @@ export const AboutImage = () => {
 
       <div className="relative glass-panel rounded-3xl p-3 border border-slate-700/80 overflow-hidden shadow-2xl">
         <img
-          src={PERSONAL_INFO.profileImage}
+          src={PERSONAL_INFO.aboutImage || PERSONAL_INFO.profileImage}
           alt={PERSONAL_INFO.name}
           loading="lazy"
           className="w-full h-80 sm:h-96 object-cover rounded-2xl"

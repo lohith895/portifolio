@@ -10,6 +10,7 @@ export const PERSONAL_INFO = {
   availableForHire: true,
   resumeUrl: "/resume/Appala_Lohith_Resume.pdf",
   profileImage: "/images/profile.png",
+  aboutImage: "/images/about.jpg",
   heroBgImage: "/images/hero-bg.jpg"
 };
 
