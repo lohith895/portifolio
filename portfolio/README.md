@@ -1,3 +1,0 @@
-# Developer Portfolio
-
-Modern portfolio built with React, Vite, Tailwind CSS, and Framer Motion.
