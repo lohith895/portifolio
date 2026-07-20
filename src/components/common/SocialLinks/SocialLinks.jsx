@@ -1,12 +1,12 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaCode, FaEnvelope } from 'react-icons/fa';
 import { SOCIAL_LINKS } from '../../../data/socials';
 import './SocialLinks.css';
 
 const iconMap = {
   FaGithub: FaGithub,
   FaLinkedin: FaLinkedin,
-  FaTwitter: FaTwitter,
+  FaCode: FaCode,
   FaEnvelope: FaEnvelope,
 };
 
@@ -14,7 +14,7 @@ export const SocialLinks = ({ className = '', iconSize = 'text-xl' }) => {
   return (
     <div className={`flex items-center gap-4 ${className}`}>
       {SOCIAL_LINKS.map((link) => {
-        const IconComponent = iconMap[link.icon] || FaGithub;
+        const IconComponent = typeof link.icon === 'function' ? link.icon : (iconMap[link.icon] || FaGithub);
         return (
           <a
             key={link.name}
@@ -22,12 +22,15 @@ export const SocialLinks = ({ className = '', iconSize = 'text-xl' }) => {
             target="_blank"
             rel="noopener noreferrer"
             title={link.name}
-            className="social-link-item p-3 rounded-xl glass-card text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 shadow-md"
+            aria-label={link.name}
+            className="social-link-item p-3 rounded-xl glass-card text-slate-300 hover:text-blue-400 hover:border-blue-500/50 shadow-md flex items-center justify-center min-h-[44px] min-w-[44px]"
           >
-            <IconComponent className={iconSize} />
+            <IconComponent className={iconSize} style={{ color: link.color }} />
           </a>
         );
       })}
     </div>
   );
 };
+
+export default SocialLinks;

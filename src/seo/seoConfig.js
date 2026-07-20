@@ -22,9 +22,9 @@ export const DEFAULT_SEO = {
     "Portfolio"
   ],
   socials: {
-    github: "https://github.com/appalalohith",
-    linkedin: "https://linkedin.com/in/appalalohith",
-    leetcode: "https://leetcode.com/appalalohith"
+    github: "https://github.com/lohith895",
+    linkedin: "https://www.linkedin.com/in/a-lohith-venkata-guptha-56532a269/",
+    leetcode: "https://leetcode.com/u/A_LOHITH_VENKATA_GUPTHA/"
   }
 };
 

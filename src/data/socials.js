@@ -1,26 +1,28 @@
+import { FaGithub, FaLinkedin, FaCode, FaEnvelope } from 'react-icons/fa';
+
 export const SOCIAL_LINKS = [
   {
     name: "GitHub",
-    url: "https://github.com/appalalohith",
-    icon: "FaGithub",
+    url: "https://github.com/lohith895",
+    icon: FaGithub,
     color: "#333333"
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/appalalohith",
-    icon: "FaLinkedin",
+    url: "https://www.linkedin.com/in/a-lohith-venkata-guptha-56532a269/",
+    icon: FaLinkedin,
     color: "#0A66C2"
   },
   {
-    name: "Twitter / X",
-    url: "https://twitter.com/appalalohith",
-    icon: "FaTwitter",
-    color: "#1DA1F2"
+    name: "LeetCode",
+    url: "https://leetcode.com/u/A_LOHITH_VENKATA_GUPTHA/",
+    icon: FaCode,
+    color: "#FFA116"
   },
   {
     name: "Email",
-    url: "mailto:appala.lohith@example.com",
-    icon: "FaEnvelope",
+    url: "mailto:lohi.valli@gmail.com",
+    icon: FaEnvelope,
     color: "#EA4335"
   }
 ];
