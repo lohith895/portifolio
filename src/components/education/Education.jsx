@@ -9,8 +9,7 @@ import { Section } from '../common/Section';
 import { Container } from '../common/Container';
 import { SectionTitle } from '../common/SectionTitle';
 import { Button } from '../common/Button';
-import { PERSONAL_INFO } from '../../utils/constants';
-import { scrollToElement } from '../../utils/helpers';
+import { scrollToElement, downloadResume } from '../../utils/helpers';
 
 export const Education = () => {
   return (
@@ -55,7 +54,7 @@ export const Education = () => {
               variant="primary"
               size="lg"
               icon={FaDownload}
-              onClick={() => window.open(PERSONAL_INFO.resumeUrl, '_blank')}
+              onClick={downloadResume}
             >
               Download Resume
             </Button>

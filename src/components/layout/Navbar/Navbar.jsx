@@ -7,8 +7,7 @@ import DesktopMenu from './DesktopMenu';
 import MobileMenu from './MobileMenu';
 import ThemeToggle from './ThemeToggle';
 import { useScroll } from '../../../hooks/useScroll';
-import { PERSONAL_INFO } from '../../../utils/constants';
-import { scrollToElement } from '../../../utils/helpers';
+import { scrollToElement, downloadResume } from '../../../utils/helpers';
 import { Button } from '../../common/Button';
 import './Navbar.css';
 
@@ -29,7 +28,6 @@ export const Navbar = memo(() => {
     }
   };
 
-  // Hide on scroll down after 100px
   const isHidden = scrollDirection === 'down' && isScrolled && !mobileOpen;
 
   return (
@@ -43,24 +41,21 @@ export const Navbar = memo(() => {
         }`}
       >
         <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 flex items-center justify-between">
-          {/* Logo */}
           <Logo />
 
-          {/* Desktop Navigation */}
           <DesktopMenu
             activeSection={activeSection}
             isHomePage={isHomePage}
             onNavigate={handleNavigate}
           />
 
-          {/* Right Actions */}
           <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
             <Button
               variant="outline"
               size="sm"
               icon={FaDownload}
-              onClick={() => window.open(PERSONAL_INFO.resumeUrl, '_blank')}
+              onClick={downloadResume}
             >
               Resume
             </Button>
@@ -74,7 +69,6 @@ export const Navbar = memo(() => {
             </Button>
           </div>
 
-          {/* Mobile Actions & Hamburger */}
           <div className="flex items-center gap-3 lg:hidden">
             <button
               onClick={() => setMobileOpen(true)}
@@ -87,7 +81,6 @@ export const Navbar = memo(() => {
         </div>
       </motion.header>
 
-      {/* Mobile Drawer */}
       <MobileMenu
         isOpen={mobileOpen}
         onClose={() => setMobileOpen(false)}

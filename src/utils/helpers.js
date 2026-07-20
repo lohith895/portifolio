@@ -1,3 +1,6 @@
+import { PERSONAL_INFO } from './constants';
+import toast from 'react-hot-toast';
+
 export const truncateText = (text, maxLength = 100) => {
   if (!text || text.length <= maxLength) return text;
   return text.substring(0, maxLength).trim() + "...";
@@ -22,4 +25,19 @@ export const filterProjectsByCategory = (projects, category) => {
     p.category.toLowerCase() === category.toLowerCase() || 
     p.tags?.some(tag => tag.toLowerCase() === category.toLowerCase())
   );
+};
+
+export const downloadResume = () => {
+  try {
+    const link = document.createElement('a');
+    link.href = PERSONAL_INFO.resumeUrl;
+    link.download = 'Appala_Lohith_Venkata_Guptha_Resume.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    toast.success('Downloading Resume PDF...');
+  } catch (error) {
+    toast.error('Failed to download resume. Please try again.');
+  }
 };

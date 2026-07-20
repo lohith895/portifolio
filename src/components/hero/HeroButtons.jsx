@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaDownload, FaPaperPlane } from 'react-icons/fa';
-import { HERO_DATA } from './heroData';
-import { scrollToElement } from '../../utils/helpers';
+import { scrollToElement, downloadResume } from '../../utils/helpers';
 import { Button } from '../common/Button';
 
 export const HeroButtons = () => {
@@ -26,7 +25,7 @@ export const HeroButtons = () => {
         variant="outline"
         size="lg"
         icon={FaDownload}
-        onClick={() => window.open(HERO_DATA.resumeUrl, '_blank')}
+        onClick={downloadResume}
       >
         Download Resume
       </Button>

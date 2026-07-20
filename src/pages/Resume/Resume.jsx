@@ -6,9 +6,9 @@ import { SectionTitle } from '../../components/common/SectionTitle';
 import { PERSONAL_INFO } from '../../utils/constants';
 import { EXPERIENCES } from '../../data/experience';
 import { EDUCATION } from '../../data/education';
-import { SKILLS } from '../../data/skills';
 import { Button } from '../../components/common/Button';
-import { FaDownload, FaBriefcase, FaGraduationCap, FaCode } from 'react-icons/fa';
+import { downloadResume } from '../../utils/helpers';
+import { FaDownload, FaBriefcase, FaGraduationCap } from 'react-icons/fa';
 
 export const Resume = () => {
   return (
@@ -35,7 +35,7 @@ export const Resume = () => {
                 variant="primary"
                 size="md"
                 icon={FaDownload}
-                onClick={() => window.open(PERSONAL_INFO.resumeUrl, '_blank')}
+                onClick={downloadResume}
               >
                 Download PDF
               </Button>
